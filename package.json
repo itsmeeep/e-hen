@@ -1,0 +1,20 @@
+{
+  "name": "e-hen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^2.6.6",
+    "ping": "^0.4.2",
+    "puppeteer": "^19.4.1",
+    "readline-sync": "^1.4.10"
+  }
+}
