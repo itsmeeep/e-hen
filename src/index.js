@@ -4,8 +4,27 @@ const fs = require('fs').promises;
 const readline = require('readline-sync')
 const ping = require('ping')
 
+async function exists (path) {  
+    try {
+        await fs.access(path)
+        return true
+    } catch {
+        return false
+    }
+}
+
 const readFile = () => new Promise (async (resolve, reject) => {
     try {
+        // checking directory
+        if (await exists("./downloads") == false) {
+            await fs.mkdir('./downloads');
+        }
+
+        if (await exists("./history") == false) {
+            await fs.mkdir('./history');
+        }
+
+        // checking url file
         var urls = await fs.readFile('./url.txt', 'utf8');
         urls = urls.toString().split('\r\n');
 
